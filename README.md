@@ -40,7 +40,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 npx create-next-app dirctory-name
 ```
 
-? Would you like to use App Router? (recommended) › No / Yes
+? Would you like to use App Router? (recommended) › No / Yes  
 → Yes を選択する。「Appフォルダ」がインストールされる。
 
 ※ 上記以外は No で可。
