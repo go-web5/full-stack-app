@@ -8,9 +8,12 @@ export async function GET(request, context) {
   // console.log(context.params.id); // id を取得
 
   try {
+    // MongoDB データベースへの接続を管理するための関数
+    // 接続が成功したか失敗したかをログに記録
     await connectDB()
 
     // データを一つ読み取るために findById に id を渡す
+    // findById の()には id を渡すことが前提となっている
     const singleItem = await ItemModel.findById(context.params.id)
 
     return NextResponse.json({message: "アイテム読み取り成功（シングル）", singleItem: singleItem})

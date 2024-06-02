@@ -2,7 +2,11 @@ import { NextResponse } from "next/server"
 import connectDB from "@/app/utils/databese";
 import { ItemModel } from "@/app/utils/schemaModels";
 
+
 export async function POST(request) {
+
+  // フロントエンドや Thunder Client から送られてきた修正済みのデータを受け取る
+  // request に含まれる大量のデータの中の body の中身を取得するため .json を指定する
   const reqBody = await request.json()
 
   try {
