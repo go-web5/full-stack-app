@@ -3,7 +3,7 @@ import connectDB from "@/app/utils/databese"
 import { ItemModel } from "@/app/utils/schemaModels"
 
 // URL を取得するために context を使用する
-// context は GET() の引数の2つ目に記述する必要があるので、1つ目にはrequestを入れる
+// context は PUT() の引数の2つ目に記述する必要があるので、1つ目には request を入れる
 export async function PUT(request, context) {
 
   // フロントエンドや Thunder Client から送られてきた修正済みのデータを受け取る

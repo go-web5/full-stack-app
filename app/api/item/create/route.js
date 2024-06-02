@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import connectDB from "@/app/utils/databese";
 import { ItemModel } from "@/app/utils/schemaModels";
 
-
+// POST() の引数の1つ目には request を入れる
 export async function POST(request) {
 
   // フロントエンドや Thunder Client から送られてきた修正済みのデータを受け取る
