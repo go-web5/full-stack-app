@@ -15,12 +15,22 @@ export async function PUT(request, context) {
     // 接続が成功したか失敗したかをログに記録
     await connectDB()
 
-    // 修正するため、ItemModel に格納された updateOne を使う
-    // updateOne の()には id を渡すことが前提になっていないので、_id を指定して、その key には URLに入力された文字列から取得した id の context.params.id を指定する
-    // updateOne の第二引数には 修正済みのデータを入れる
-    await ItemModel.updateOne({_id: context.params.id}, reqBody)
+    // データベースから更新するアイテムを探す
+    const singleItem = await ItemModel.findById(context.params.id)
 
-    return NextResponse.json({message: "アイテム編集成功"})
+    // 誰がログインしているかを判定 - データベースから探したアイテムの email と、更新ボタンを押してフロントエンドから送られてきたアイテムの email を比較する
+    if (singleItem.email === reqBody.email) {
+      
+      // 修正するため、ItemModel に格納された updateOne を使う
+      // updateOne の()には id を渡すことが前提になっていないので、_id を指定して、その key には URLに入力された文字列から取得した id の context.params.id を指定する
+      // updateOne の第二引数には 修正済みのデータを入れる
+      await ItemModel.updateOne({_id: context.params.id}, reqBody)
+
+      return NextResponse.json({message: "アイテム編集成功"})
+      
+    } else {
+      return NextResponse.json({message: "他の人が作成したアイテムです"})
+    }
 
   } catch(err) {
     return NextResponse.json({message: "アイテム編集失敗"})
