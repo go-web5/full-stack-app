@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import connectDB from "@/app/utils/databese";
-import { ItemModel } from "@/app/utils/schemaModels";
+import { UserModel } from "@/app/utils/schemaModels";
 
 // POST() の引数の1つ目には request を入れる
 export async function POST(request) {
@@ -15,12 +15,12 @@ export async function POST(request) {
     await connectDB() 
 
     // データベースへの書き込みする、引数に書き込みたいデータを入れる
-    await ItemModel.create(reqBody)
+    await UserModel.create(reqBody)
 
     // NextResponse は Next.js だけで使える
-    return NextResponse.json({message: "アイテム作成成功"})
+    return NextResponse.json({message: "ユーザー登録成功"})
 
   } catch(err) {
-    return Next.Response.json({message: "アイテム作成失敗"})
+    return Next.Response.json({message: "ユーザー登録失敗"})
   }
 }
