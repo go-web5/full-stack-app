@@ -17,3 +17,6 @@ export async function GET() {
     return NextResponse.json({message: "アイテム読み取り失敗（オール）"})
   }
 }
+
+// リクエスト毎にデータ取得を毎回行うようにする
+export const revalidate = 0
