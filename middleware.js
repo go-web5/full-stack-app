@@ -8,7 +8,7 @@ export async function middleware(request) {
   // ローカルストレージからトークン取り出し、HTTP Headersに格納し、request としてバックエンドに送り、取得したトークンを token に格納
   // const token = await request.headers.get("Authorization")?.split("")[1]
 
-  const token = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImR1bW15QGdtYWlsLmNvbSIsImV4cCI6MTcxNzQwNjE4Nn0.bttHtu0lPoRgqq_z9xmLi0DGDJB-VviJBph-9vQ33Bc"
+  const token = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImR1bW15MkBnbWFpbC5jb20iLCJleHAiOjE3MjQyODEzMjl9.Qkr7Kb3NglI0lDDnQCFyoIFZRNdtBprhVqVTHW7H9Nk"
 
   // トークンが存在してない場合
   if (!token) {
