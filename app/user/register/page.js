@@ -1,5 +1,9 @@
+// <form>処理などユーザーがデータを投稿する操作は、サーバーコンポーネント内では行えないのでクライアントコンポーネントに変更する。
 "use client"
+
 import { useState } from "react"
+
+// データを送ってレスポンスを受け取る
 
 const Register = () => {
   
