@@ -28,6 +28,6 @@ const UserSchema = new Schema({
 })
 
 // データベース操作を実行するには Model が必要。Model は Schemaをベースに生成する
-export const ItemModel = mongoose.model.Item || mongoose.model("Item", ItemSchema)
+export const ItemModel = mongoose.models.Item || mongoose.model("Item", ItemSchema)
 
-export const UserModel = mongoose.model("User", UserSchema)
+export const UserModel = mongoose.models.User || mongoose.model("User", UserSchema)

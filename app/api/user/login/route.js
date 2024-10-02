@@ -35,7 +35,7 @@ export async function POST(request) {
         // トークン発行
         const token = await new SignJWT(payload)
           .setProtectedHeader({alg: "HS256"}) // アルゴリズム
-          .setExpirationTime("1d") // 有効期限 1d = 1日
+          .setExpirationTime("30d") // 有効期限 1d = 1日
           .sign(secretKey)
 
         // NextResponse は Next.js だけで使える
