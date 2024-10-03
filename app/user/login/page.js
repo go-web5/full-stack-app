@@ -24,7 +24,7 @@ const Login = () => {
 
     try {
       // データの送付先（バックエンド）
-      const response = await fetch("http://localhost:3000/api/user/login", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/user/login`, {
         method: "POST", // 新しいデータを作成する
         headers: { // POSTリクエストで送るデータの種類やその他補足情報を追加
           "Accept": "application/json",
