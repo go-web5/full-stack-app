@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 import Image from "next/image"
 import useAuth from "../../../utils/useAuth"
 
@@ -12,6 +13,7 @@ const DeleteItem = (context) => {
   const [email, setEmail] = useState("")
 
   const loginUserEmail = useAuth()
+　const router = useRouter()
 
   useEffect(() => {
     const getSingleItem = async(id) => {
@@ -50,6 +52,8 @@ const DeleteItem = (context) => {
       })
       const jsonData = await response.json()
       alert(jsonData.message)
+      router.push("/")  
+      router.refresh()
 
     } catch(err) {
       alert("アイテム削除失敗")

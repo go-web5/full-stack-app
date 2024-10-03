@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { useRouter } from "next/navigation"
 import useAuth from "../../../utils/useAuth"
 
 const UpdateItem = (context) => {
@@ -11,6 +12,7 @@ const UpdateItem = (context) => {
   const [email, setEmail] = useState("")
 
   const loginUserEmail = useAuth()
+　const router = useRouter()
 
   useEffect(() => {
     const getSingleItem = async(id) => {
@@ -53,6 +55,8 @@ const UpdateItem = (context) => {
       })
       const jsonData = await response.json()
       alert(jsonData.message)
+      router.push("/")  
+      router.refresh()
 
     } catch(err) {
       alert("アイテム編集失敗")

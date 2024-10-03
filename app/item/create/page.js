@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import useAuth from "../../utils/useAuth"
 
 const CreateItem = () => {
@@ -10,7 +11,7 @@ const CreateItem = () => {
   const [description, setDescription] = useState("")
 
   const loginUserEmail = useAuth()
-  // console.log(loginUserEmail);
+　const router = useRouter()
 
   const handleSubmit = async(e) => {
     e.preventDefault()
@@ -33,6 +34,8 @@ const CreateItem = () => {
       })
       const jsonData = await response.json()
       alert(jsonData.message)
+      router.push("/")  
+      router.refresh()
 
     } catch(err) {
       alert("アイテム作成失敗")
