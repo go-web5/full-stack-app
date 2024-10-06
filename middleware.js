@@ -8,8 +8,6 @@ export async function middleware(request) {
   // ローカルストレージからトークン取り出し、HTTP Headersに格納し、request としてバックエンドに送り、取得したトークンを token に格納
   const token = await request.headers.get("Authorization")?.split(" ")[1]
 
-  // const token = "eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImR1bW15MkBnbWFpbC5jb20iLCJleHAiOjE3MjcwNTQyNjl9.uyYme3WmX4REQIU_lAMw0ZoHHmc1XKyU5kDe1ASdSCQ"
-
   // トークンが存在してない場合
   if (!token) {
     return NextResponse.json({message: "トークンがありません"})

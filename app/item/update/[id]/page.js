@@ -19,9 +19,7 @@ const UpdateItem = (context) => {
     const getSingleItem = async(id) => {
       const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`, {cache: "no-store"})
       const jsonData = await response.json()
-      // console.log(jsonData.singleItem);
       const singleItem = jsonData.singleItem
-      // return singleItem
 
       setTitle(singleItem.title)
       setPrice(singleItem.price)

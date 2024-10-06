@@ -6,7 +6,6 @@ const getAllItems = async() => {
   // no-store → データを更新しても直ちに反映されないことがあるため、キャッシュを保存しないように設定
   const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readall`, {cache: "no-store"})
   const jsonData = await response.json()
-  // console.log(jsonData);
   const allItems = jsonData.allItems
   return allItems
 }
@@ -14,7 +13,6 @@ const getAllItems = async() => {
 const ReadAllItems = async() => {
   // console.log(process.env.NEXT_PUBLIC_URL);
   const allItems = await getAllItems()
-  // console.log(allItems);
 
   return (
     <div>
