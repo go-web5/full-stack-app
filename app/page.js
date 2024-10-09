@@ -15,8 +15,7 @@ const ReadAllItems = async() => {
   const allItems = await getAllItems()
 
   return (
-    <div>
-      <h1 className="grid-container-in">こんにちは</h1>
+    <div className="grid-container-in">
       {/* mapで分割した個々のデータには、それぞれにkeyを割り当てる必要がある */}
       {allItems.map(item => 
         <Link href={`/item/readsingle/${item._id}`} key={item._id}>
