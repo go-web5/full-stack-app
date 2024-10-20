@@ -1,3 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap");
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@layer base {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    font-family: "Noto Sans JP", sans-serif;
+    @apply text-white bg-zinc-800;
+  }
+  main {
+    display: block;
+    flex: 1;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply border rounded-md text-xs md:text-sm px-2 py-1 text-white bg-zinc-700 duration-300 ease-in-out hover:bg-white hover:text-zinc-900;
+  }
+  .btn-secondary {
+    @apply w-full border border-gray-600 px-2 py-2 mt-4 md:mt-6 rounded-md bg-zinc-700 duration-300 ease-in-out hover:bg-rose-400;
+  }
+  .card {
+    @apply border border-gray-600 rounded duration-300 ease-in-out hover:border-gray-300;
+  }
+  .user-input {
+    @apply w-full text-zinc-900 border border-gray-600 px-2 py-2 rounded-md;
+    & + & {
+      @apply mt-4 md:mt-6;
+    }
+  }
+  .user-textarea {
+    @apply w-full text-zinc-900 border border-gray-600 px-2 py-2 mt-6 rounded-md;
+  }
+  .lower-header {
+    @apply text-xl md:text-2xl text-center font-bold pt-6 pb-6 md:pb-10;
+  }
+}
+
+/* Img Form */
+.img-input{
+  display: grid;
+  grid-template-columns: 0.8fr 0.2fr;
+  gap: 1rem;
+  width: 100%;
+}
+
+.img-input > input{
+  display: block;
+  background-color: rgb(221, 221, 221);
+  padding: 0.4rem 0.6rem;
+}
+
+.img-input > button{
+  padding: 0;
+  font-size: 1rem;
+  height: 100%;
+  background: #858585;
+}
+
+.img-input > button:hover{
+  opacity: 0.8;
+  background: linear-gradient(135deg,#FF63A4,#FFD873);
+}
+
+.img-input >button:disabled, .img-input > button[disabled]{
+  background: #858585;
+  color: rgb(165, 165, 165);
+}
+
+.img-input >button:disabled, .img-input > button[disabled]:hover{
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+@media(max-width: 600px){ 
+  .img-input{
+    grid-template-columns: 1fr;
+    gap: 0rem;
+  }
+  .img-input > input{
+    padding: 0.4rem 0.4rem;
+    width: 100%;
+    font-size: 1rem;
+  }
+  .img-input > button{
+    height: auto;
+    padding: 0.5rem 0.25rem;
+  }
+}

@@ -63,16 +63,23 @@ const DeleteItem = (context) => {
   if(loding) {
     if(loginUserEmail === email) {
       return (
-        <div>
-          <h1 className="page-title">アイテム削除</h1>
+        <main>
+          <h1 className="lower-header">アイテム削除</h1>
           <form onSubmit={handleSubmit}>
-            <h2>{title}</h2>
-            <Image src={image} width={750} height={500} alt="item-image" priority/>
-            <h3>¥{price}</h3>
-            <p>{description}</p>
-            <button>削除</button>
+            <div className="grid grid-cols-1 md:grid-cols-10 gap-2 md:gap-6">
+              <div className="grid-cols-1 md:col-span-6">
+                <Image src={image} width={750} height={500} alt="item-image" priority/>
+              </div>
+              <div className="grid-cols-1 md:col-span-4">
+                <h2 className="text-sm md:text-base font-semibold">{title}</h2>
+                <h3 className="text-lg md:text-2xl font-semibold">¥{price}</h3>
+                <hr/>
+                <p className="mt-4 text-sm md:text-base">{description}</p>
+                <button className="btn-secondary">削除</button>
+              </div>
+            </div>
           </form>
-        </div>
+        </main>
       )
     } else {
       return <h1>権限がありません</h1>

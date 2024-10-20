@@ -45,17 +45,19 @@ const CreateItem = () => {
 
   if(loginUserEmail) {
     return (
-      <div>
-        <h1 className="page-title">アイテム作成</h1>
-        <ImgInput setImage={setImage}/>
+      <main>
+        <h1 className="lower-header">アイテム作成</h1>
+        <div className="mb-6">
+          <ImgInput setImage={setImage}/>
+        </div>
         <form onSubmit={handleSubmit}>
-          <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" name="title" placeholder="アイテム名" required/>
-          <input value={price} onChange={(e) => setPrice(e.target.value)} type="text" name="price" placeholder="価格" required/>
-          <input value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="画像" required/>
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} name="description" rows={15} placeholder="商品説明" required></textarea>
-          <button>作成</button>
+          <input className="user-input" value={title} onChange={(e) => setTitle(e.target.value)} type="text" name="title" placeholder="アイテム名" required/>
+          <input className="user-input" value={price} onChange={(e) => setPrice(e.target.value)} type="text" name="price" placeholder="価格" required/>
+          <input className="user-input" value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="画像" required/>
+          <textarea className="user-textarea" value={description} onChange={(e) => setDescription(e.target.value)} name="description" rows={10} placeholder="商品説明" required></textarea>
+          <button className="btn-secondary">作成</button>
         </form>
-      </div>
+      </main>
     )
   }
 }

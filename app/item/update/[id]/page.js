@@ -66,16 +66,16 @@ const UpdateItem = (context) => {
   if(loding) {
     if(loginUserEmail === email) {
       return (
-        <div>
-          <h1 className="page-title">アイテム編集</h1>
+        <main>
+          <h1 className="lower-header">アイテム編集</h1>
           <form onSubmit={handleSubmit}>
-            <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" name="title" placeholder="アイテム名" required/>
-            <input value={price} onChange={(e) => setPrice(e.target.value)} type="text" name="price" placeholder="価格" required/>
-            <input value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="画像" required/>
-            <textarea value={description} onChange={(e) => setDescription(e.target.value)} name="description" rows={15} placeholder="商品説明" required></textarea>
-            <button>編集</button>
+            <input className="user-input" value={title} onChange={(e) => setTitle(e.target.value)} type="text" name="title" placeholder="アイテム名" required/>
+            <input className="user-input" value={price} onChange={(e) => setPrice(e.target.value)} type="text" name="price" placeholder="価格" required/>
+            <input className="user-input" value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="画像" required/>
+            <textarea className="user-textarea" value={description} onChange={(e) => setDescription(e.target.value)} name="description" rows={10} placeholder="商品説明" required></textarea>
+            <button className="btn-secondary">編集</button>
           </form>
-        </div>
+        </main>
       )
     } else {
       return <h1>権限がありません</h1>
