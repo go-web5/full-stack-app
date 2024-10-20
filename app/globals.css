@@ -1,242 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
-/* Common style */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-html{
-  font-size: 62.5%;
-}
-
-body{
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 300;
-  color: #333;
-  max-width: 1100px; 
-  margin-right: auto; 
-  margin-left:  auto;
-  padding-right: 1.5rem; 
-  padding-left:  1.5rem;
-}
-
-h1{
-  font-size: 3rem;
-  font-weight: 400;
-  line-height: 3.5rem;
-}
-
-h2{
-  font-size: 2.4rem;
-  font-weight: 400;
-  line-height: 3rem;
-}
-
-h3{
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 3rem;
-}
-
-p{
-  font-size: 1.8rem;
-  line-height: 3.5rem;
-  margin-bottom: 1.4rem;
-}
-
-a{
-  text-decoration: none;
-}
-
-.page-title{
-  margin: 3rem 0 4rem;
-  text-align: center;
-}
-
-/* Form */
-label{
-  font-size: 1.8rem;
-  line-height: 2.5rem;
-}
-
-input, textarea{
-  width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 2rem;
-  border: 0.1rem solid #ccc;
-  border-radius: 0.5rem;
-  box-sizing: border-box;
-  resize: vertical;
-  font-size: 1.6rem;
-  letter-spacing: 0;
-  font-family: inherit;
-}
-
-button{
-  background: #858585;
-  font-size: 1.6rem;
-  color: #fff;
-  padding: 0.6rem;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover{
-  opacity: 0.8;
-  background: linear-gradient(135deg,#FF63A4,#FFD873);
-}
-
-/* Header */
-header * img{
-  width: 100%;  
-  height: auto;
-}
-
-header * li{
-  display: inline;
-}
-
-nav{
-  text-align: end;
-  margin: 2rem 0 2.2rem;
-}
-
-header * li a{
-  padding: 0.3rem 1.7rem;
-  margin-left: 1rem;
-  border-radius: 0.5rem;
-  background-image: linear-gradient( -20deg, #646464 0%, #646464 80%, #FFD873 80%, #FFD873 80%);
-  color: #fff;
-  font-size: 1.6rem;
-  font-weight: 400;
-}
-
-header * li a:hover{
-  opacity: 0.8;
-  transition: all 0.3s;
-}
-
-@media(max-width: 400px){ 
-  header * li a{
-    padding: 0.2rem 1.4rem;
-    font-size: 1.2rem;
+@layer base {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    font-family: "Noto Sans JP", sans-serif;
+    @apply text-white bg-zinc-800;
   }
-} 
-
-/* Index */
-.grid-container-in{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 3rem;
-}
-
-@media(max-width: 600px){ 
-  .grid-container-in{
-      grid-template-columns: 1fr;
-  }
-} 
-
-.grid-container-in > a {
-  display: block;
-  border-radius: 1rem;
-  width: 100%;
-  border: 0.05rem solid rgb(223, 223, 223);
-}
-
-.grid-container-in > a:hover{
-  backdrop-filter: blur(2rem);
-  box-shadow: 0.4rem 0.4rem 1.3rem 0.5rem rgba(0,0,0,0.25);
-  transition: all 0.3s;
-}
-
-.grid-container-in > a * img, .grid-container-in > a > img{
-  width: 100%;
-  height: auto;
-  border-radius: 1rem 1rem 0 0; 
-}
-
-.grid-container-in > * > div {
-  padding: 1.5rem 1.5rem;
-  color: #333;
-}
-
-.grid-container-in > * > div  > h2{
-  color: #FF63A4;
-  margin-bottom: 0.4rem;
-}
-
-.grid-container-in > * > div  > p{
-  margin-bottom: 0;
-}
-
-/* Single Item */
-.grid-container-si{
-  display: grid;
-  grid-template-columns: 0.6fr 0.4fr;
-  gap: 2rem;
-}
-
-@media(max-width: 600px){ 
-  .grid-container-si{
-      grid-template-columns: 1fr;
-  }
-} 
-
-.grid-container-si * img{
-  border-radius: 1rem;
-  width: 100%;
-  height: auto;
-}
-
-.grid-container-si h2{
-  color: #FF63A4;
-  margin: 1rem 0 2rem; 
-}
-
-.grid-container-si hr{
-  margin: 1.5rem 0; 
-}
-
-.grid-container-si * a{
-  padding: 0.3rem 1.7rem;
-  margin-right: 1rem;
-  border-radius: 0.5rem;
-  background-image: linear-gradient( -20deg, #646464 0%, #646464 80%, #FF63A4 80%, #FF63A4 80%);
-  color: rgb(255, 255, 255);
-  font-size: 1.6rem;
-  font-weight: 400;
-}
-
-.grid-container-si * a:hover{
-  opacity: 0.8;
-  transition: all 0.3s;
-}
-
-@media(max-width: 400px){ 
-  .grid-container-si * a{
-    padding: 0.2rem 1.4rem;
-    font-size: 1.2rem;
+  main {
+    display: block;
+    flex: 1;
   }
 }
 
-/* Delete Item */
-.delete-page * img{
-  border-radius: 1rem;
-}
-
-.delete-page * h1{
-  margin-bottom: 1.5rem;
-}
-
-.delete-page * h2{
-  margin: 1rem 0;
+@layer components {
+  .btn-primary {
+    @apply border rounded-md text-xs md:text-sm px-2 py-1 text-white bg-zinc-700 duration-300 ease-in-out hover:bg-white hover:text-zinc-900;
+  }
+  .btn-secondary {
+    @apply w-full border border-gray-600 px-2 py-2 mt-4 md:mt-6 rounded-md bg-zinc-700 duration-300 ease-in-out hover:bg-rose-400;
+  }
+  .card {
+    @apply border border-gray-600 rounded duration-300 ease-in-out hover:border-gray-300;
+  }
+  .user-input {
+    @apply w-full text-zinc-900 border border-gray-600 px-2 py-2 rounded-md;
+    & + & {
+      @apply mt-4 md:mt-6;
+    }
+  }
+  .user-textarea {
+    @apply w-full text-zinc-900 border border-gray-600 px-2 py-2 mt-6 rounded-md;
+  }
+  .lower-header {
+    @apply text-xl md:text-2xl text-center font-bold pt-6 pb-6 md:pb-10;
+  }
 }
 
 /* Img Form */
@@ -244,19 +46,19 @@ header * li a:hover{
   display: grid;
   grid-template-columns: 0.8fr 0.2fr;
   gap: 1rem;
+  width: 100%;
 }
 
 .img-input > input{
   display: block;
   background-color: rgb(221, 221, 221);
-  padding: 0.4rem 0 0 0.5rem;
+  padding: 0.4rem 0.6rem;
 }
 
 .img-input > button{
   padding: 0;
-  font-size: 1.4rem;
-  margin-bottom: 2rem;
-  height: 3.6rem;
+  font-size: 1rem;
+  height: 100%;
   background: #858585;
 }
 
@@ -275,24 +77,18 @@ header * li a:hover{
   cursor: not-allowed;
 }
 
-@media(max-width: 400px){ 
+@media(max-width: 600px){ 
   .img-input{
     grid-template-columns: 1fr;
     gap: 0rem;
   }
-  .img-input > button{
-    margin: -1rem 0 3rem;
-    height: 3rem;
+  .img-input > input{
+    padding: 0.4rem 0.4rem;
+    width: 100%;
+    font-size: 1rem;
   }
-}
-
-/* Create Item */
-/* Update Item */
-/* Register */
-/* Login */
-
-/* Footer */
-footer{
-  text-align: center;
-  margin: 3rem 0;
+  .img-input > button{
+    height: auto;
+    padding: 0.5rem 0.25rem;
+  }
 }

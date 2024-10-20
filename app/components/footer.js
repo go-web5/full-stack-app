@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      <p>@{new Date().getFullYear()} Next Market</p>
+      <p className="text-center py-4">@{new Date().getFullYear()} Next Market</p>
     </footer>
   )
 }

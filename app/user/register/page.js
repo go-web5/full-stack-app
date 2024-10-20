@@ -43,15 +43,15 @@ const Register = () => {
   }
 
   return (
-    <div>
-      <h1 className="page-title">ユーザー登録</h1>
+    <main>
+      <h1 className="lower-header">ユーザー登録</h1>
       <form onSubmit={handleSubmit}>
-        <input value={newUser.name} onChange={handleChange} type="text" name="name" placeholder="名前" required/>
-        <input value={newUser.email} onChange={handleChange} type="text" name="email" placeholder="メールアドレス" required/>
-        <input value={newUser.password} onChange={handleChange} type="text" name="password" placeholder="パスワード" required/>
-        <button>登録</button>
+        <input className="user-input" value={newUser.name} onChange={handleChange} type="text" name="name" placeholder="名前" required/>
+        <input className="user-input" value={newUser.email} onChange={handleChange} type="text" name="email" placeholder="メールアドレス" required/>
+        <input className="user-input" value={newUser.password} onChange={handleChange} type="text" name="password" placeholder="パスワード" required/>
+        <button className="btn-secondary">登録</button>
       </form>
-    </div>
+    </main>
   )
 }
 
