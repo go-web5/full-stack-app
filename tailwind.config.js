@@ -9,6 +9,9 @@ module.exports = {
       '1100': '1100px',
     },
     extend: {
+      colors: {
+        yellow: '#FFA742',
+      },
     },
   },
   plugins: [
