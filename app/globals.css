@@ -22,7 +22,7 @@
     @apply border rounded-md text-xs md:text-sm px-2 py-1 text-white bg-zinc-700 duration-300 ease-in-out hover:bg-white hover:text-zinc-900;
   }
   .btn-secondary {
-    @apply w-full border border-gray-600 px-2 py-2 mt-4 md:mt-6 rounded-md bg-zinc-700 duration-300 ease-in-out hover:bg-rose-400;
+    @apply w-full border border-gray-600 px-2 py-2 mt-4 md:mt-6 rounded-md bg-zinc-700 duration-300 ease-in-out hover:bg-yellow;
   }
   .card {
     @apply border border-gray-600 rounded duration-300 ease-in-out hover:border-gray-300;
