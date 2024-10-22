@@ -21,6 +21,6 @@ export async function POST(request) {
     return NextResponse.json({message: "アイテム作成成功"})
 
   } catch(err) {
-    return Next.Response.json({message: "アイテム作成失敗"})
+    return NextResponse.json({message: "アイテム作成失敗"})
   }
 }

@@ -52,6 +52,6 @@ export async function POST(request) {
     }
 
   } catch(err) {
-    return Next.Response.json({message: "ログイン失敗"})
+    return NextResponse.json({message: "ログイン失敗"})
   }
 }

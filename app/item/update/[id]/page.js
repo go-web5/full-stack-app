@@ -78,10 +78,18 @@ const UpdateItem = (context) => {
         </main>
       )
     } else {
-      return <h1>権限がありません</h1>
+      return (
+        <main>
+          <h1>権限がありません</h1>
+        </main>
+      )
     }
   } else {
-    return <h1>ローディング中...</h1>
+    return (
+      <main> 
+        <h1 >ローディング中...</h1>
+      </main>
+    )
   }
 }
 
