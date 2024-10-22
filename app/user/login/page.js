@@ -2,6 +2,7 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 // データを送ってレスポンスを受け取る
 
@@ -12,6 +13,8 @@ const Login = () => {
     password: ""
   })
 
+  const router = useRouter()
+  
   const handleChange = (e) => {
     setNewUser({
       ...newUser,
@@ -38,6 +41,8 @@ const Login = () => {
       // localStorage.setItem("保管するデータの名前", 保管するデータ)
       localStorage.setItem("token", jsonData.token)
       alert(jsonData.message)
+      router.push("/")  
+      router.refresh()
 
     } catch(err) {
       alert("ログイン失敗")

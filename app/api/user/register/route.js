@@ -21,6 +21,6 @@ export async function POST(request) {
     return NextResponse.json({message: "ユーザー登録成功"})
 
   } catch(err) {
-    return Next.Response.json({message: "ユーザー登録失敗"})
+    return NextResponse.json({message: "ユーザー登録失敗"})
   }
 }
