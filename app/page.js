@@ -1,6 +1,15 @@
 import Link from "next/link"
 import Image from "next/image"
 
+export const metadata = {
+  title: "Next Market",
+  description: "不要になったものを必要としている人へ販売できるフリマアプリです。リサイクルかつお小遣い稼ぎにどうぞお使いください。",
+  robots: {
+    index: false,  // noindex
+    follow: false, // nofollow
+  }
+}
+
 const getAllItems = async() => {
   // データの投稿ではなく取得なので、body,headers,method(デフォルトはGET) の設定は不要
   // no-store → データを更新しても直ちに反映されないことがあるため、キャッシュを保存しないように設定
