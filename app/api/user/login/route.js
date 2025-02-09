@@ -29,7 +29,8 @@ export async function POST(request) {
         const secretKey = new TextEncoder().encode("next-market-app-book")
 
         const payload = {
-          email: reqBody.email, 
+          name: savedUserData.name, 
+          email: reqBody.email,
         }
 
         // トークン発行

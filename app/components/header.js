@@ -1,7 +1,21 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import useAuth from "../utils/useAuth"
+import { useRouter } from "next/navigation"
+
 
 const Header = () => {
+  const {loginUserData,resetLoginUserData} = useAuth()
+  const router = useRouter()
+
+  const handleLogout = () => { 
+    localStorage.removeItem("token");
+    resetLoginUserData() // ログイン情報をリセット
+    router.push("/")
+  }
+  
   return (
     <header>
       <div className="pt-2 md:pt-4">
@@ -10,6 +24,19 @@ const Header = () => {
         </Link>
       </div>
       <nav className="mt-3 md:mt-4">
+      {loginUserData.email ? (
+          <>
+            <ul className="flex justify-end gap-2 grid-cols-3">
+              <li className="btn-primary">
+                <button onClick={handleLogout}>ログアウト</button>
+              </li>
+              <li className="btn-primary">
+                <Link href="/item/create">アイテム作成</Link>
+              </li>
+            </ul>
+            <p className="text-right">{loginUserData.name} さん</p>
+          </>
+      ) : (
         <ul className="flex justify-end gap-2 grid-cols-3">
           <li className="btn-primary">
             <Link href="/user/register">登録</Link>
@@ -17,10 +44,8 @@ const Header = () => {
           <li className="btn-primary">
             <Link href="/user/login">ログイン</Link>
           </li>
-          <li className="btn-primary">
-            <Link href="/item/create">アイテム作成</Link>
-          </li>
         </ul>
+      )}
       </nav>
     </header>
   )
