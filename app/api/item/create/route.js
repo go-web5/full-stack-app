@@ -12,7 +12,7 @@ export async function POST(request) {
   try {
     // MongoDB データベースへの接続を管理するための関数
     // 接続が成功したか失敗したかをログに記録
-    await connectDB() 
+    await connectDB()
 
     // データベースへの書き込みする、引数に書き込みたいデータを入れる
     await ItemModel.create(reqBody)

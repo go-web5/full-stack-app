@@ -32,7 +32,7 @@ const ReadSingleItem = async(context) => {
         </div>
         <div className="grid-cols-1 md:col-span-4">
           <h1 className="text-sm md:text-base font-semibold">{singleItem.title}</h1>
-          <h2 className="text-lg md:text-2xl font-semibold">¥{singleItem.price}</h2>
+          <h2 className="text-lg md:text-2xl font-semibold">¥ {Number(singleItem.price).toLocaleString()}<span className="text-xs md:text-xs font-normal ml-1">(税込)</span></h2>
           <hr/>
           <p className="mt-4 text-sm md:text-base">{singleItem.description}</p>
           <ul className="flex gap-2 mt-4">
