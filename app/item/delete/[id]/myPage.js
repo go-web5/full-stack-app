@@ -72,7 +72,7 @@ const DeleteItem = (context) => {
               </div>
               <div className="grid-cols-1 md:col-span-4">
                 <h2 className="text-sm md:text-base font-semibold">{title}</h2>
-                <h3 className="text-lg md:text-2xl font-semibold">¥{price}</h3>
+                <h3 className="text-lg md:text-2xl font-semibold">¥ {Number(price).toLocaleString()}<span className="text-xs md:text-xs font-normal ml-1">(税込)</span></h3>
                 <hr/>
                 <p className="mt-4 text-sm md:text-base">{description}</p>
                 <button className="btn-secondary">削除</button>
