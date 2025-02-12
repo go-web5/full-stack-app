@@ -14,7 +14,7 @@ const DeleteItem = (context) => {
   const [loding, setLoding] = useState(false)
 
   const loginUserEmail = useAuth()
-　const router = useRouter()
+  const router = useRouter()
 
   useEffect(() => {
     const getSingleItem = async(id) => {

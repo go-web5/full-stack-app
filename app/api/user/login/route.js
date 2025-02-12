@@ -33,6 +33,7 @@ export async function POST(request) {
         }
 
         // トークン発行
+        // payload = トークンが含むことのできるデータ
         const token = await new SignJWT(payload)
           .setProtectedHeader({alg: "HS256"}) // アルゴリズム
           .setExpirationTime("30d") // 有効期限 1d = 1日

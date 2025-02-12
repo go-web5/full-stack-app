@@ -12,7 +12,7 @@ const CreateItem = () => {
   const [description, setDescription] = useState("")
 
   const loginUserEmail = useAuth()
-　const router = useRouter()
+  const router = useRouter()
 
   const handleSubmit = async(e) => {
     e.preventDefault()

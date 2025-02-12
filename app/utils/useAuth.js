@@ -16,6 +16,7 @@ const useAuth = () => {
       
       try{
         const secretKey = new TextEncoder().encode("next-market-app-book")
+        // jwtVerify = ログイン後のリクエスト時にトークンの有効性を検証する
         const decodedJwt = await jwtVerify(token, secretKey)
         setLoginUserEmail(decodedJwt.payload.email)
     
