@@ -32,9 +32,9 @@ const ReadAllItems = async() => {
             <Link href={`/item/readsingle/${item._id}`} className="">
               <Image src={item.image} width={750} height={500} alt="item-image" priority />
               <div className="p-2 md:p-4">
-                <h3 className="text-sm md:text-base font-semibold">{item.title}</h3>
-                <h2 className="text-lg md:text-2xl font-semibold">¥{item.price}<span className="text-xs md:text-xs font-normal ml-1">(税込)</span></h2>
-                <p className="mt-2 text-sm md:text-base">{item.description.substring(0,80)}…</p>
+                <h3 className="text-sm md:text-base font-semibold line-clamp-1">{item.title}</h3>
+                <h2 className="text-lg md:text-2xl font-semibold">¥ {Number(item.price).toLocaleString()}<span className="text-xs md:text-xs font-normal ml-1">(税込)</span></h2>
+                <p className="mt-2 text-sm md:text-base line-clamp-5">{item.description}</p>
               </div>
             </Link>
           </article>

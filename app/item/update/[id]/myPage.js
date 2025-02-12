@@ -69,11 +69,23 @@ const UpdateItem = (context) => {
         <main>
           <h1 className="lower-header">アイテム編集</h1>
           <form onSubmit={handleSubmit}>
-            <input className="user-input" value={title} onChange={(e) => setTitle(e.target.value)} type="text" name="title" placeholder="アイテム名" required/>
-            <input className="user-input" value={price} onChange={(e) => setPrice(e.target.value)} type="text" name="price" placeholder="価格" required/>
-            <input className="user-input" value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="画像" required/>
-            <textarea className="user-textarea" value={description} onChange={(e) => setDescription(e.target.value)} name="description" rows={10} placeholder="商品説明" required></textarea>
-            <button className="btn-secondary">編集</button>
+            <label className="user-label">
+              <span>アイテム名</span> <span className="text-red-500">＊</span>
+              <input className="user-input" value={title} onChange={(e) => setTitle(e.target.value)} maxLength={50} type="text" name="title" placeholder="アイテム名" required/>
+            </label>
+            <label className="user-label">
+              <span>価格</span> <span className="text-red-500">＊</span>
+              <input className="user-input" value={price} onChange={(e) => setPrice(e.target.value)} type="number" name="price" placeholder="価格" inputMode="numeric" required/>
+            </label>
+            <label className="user-label">
+              <span>画像</span> <span className="text-red-500">＊</span>
+              <input className="user-input" value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="画像" required/>
+            </label>
+            <label className="user-label">
+              <span>商品説明</span> <span className="text-red-500">＊</span>
+              <textarea className="user-textarea" value={description} onChange={(e) => setDescription(e.target.value)} name="description" rows={10} placeholder="商品説明" required></textarea>
+            </label>
+            <button className="btn-secondary">保存</button>
           </form>
         </main>
       )
