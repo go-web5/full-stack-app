@@ -1,21 +1,19 @@
 "use client"
 
+import { useEffect } from "react";
 import Image from "next/image"
 import Link from "next/link"
 import useAuth from "../utils/useAuth"
-import { useRouter } from "next/navigation"
-
+import { useAuthContext } from "../context/AuthContext"
 
 const Header = () => {
-  const {loginUserData,resetLoginUserData} = useAuth()
-  const router = useRouter()
+  const {loginUserData, logout} = useAuth()
+  const [loginBoolean] = useAuthContext()
 
-  const handleLogout = () => { 
-    localStorage.removeItem("token");
-    resetLoginUserData() // ログイン情報をリセット
-    router.push("/")
-  }
-  
+  useEffect(() => {
+    console.log("loginUserDataが更新されたのでHeaderがレンダリングされました！", loginUserData);
+  }, [loginBoolean]);
+
   return (
     <header>
       <div className="pt-2 md:pt-4">
@@ -28,7 +26,7 @@ const Header = () => {
           <>
             <ul className="flex justify-end gap-2 grid-cols-3">
               <li className="btn-primary">
-                <button onClick={handleLogout}>ログアウト</button>
+                <button onClick={logout}>ログアウト</button>
               </li>
               <li className="btn-primary">
                 <Link href="/item/create">アイテム作成</Link>

@@ -3,11 +3,13 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import useAuth from "@/app/utils/useAuth"
 
 // データを送ってレスポンスを受け取る
 
 const Login = () => {
 
+  const {login} = useAuth()
   const [newUser, setNewUser] = useState({
     email: "",
     password: ""
@@ -41,7 +43,7 @@ const Login = () => {
       // localStorage.setItem("保管するデータの名前", 保管するデータ)
       localStorage.setItem("token", jsonData.token)
       alert(jsonData.message)
-      router.push("/")  
+      login(jsonData.email, jsonData.name); // 状態を更新 & トップページへリダイレクト
       router.refresh()
 
     } catch(err) {
