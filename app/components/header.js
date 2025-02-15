@@ -37,7 +37,7 @@ const Header = () => {
       ) : (
         <ul className="flex justify-end gap-2 grid-cols-3">
           <li className="btn-primary">
-            <Link href="/user/register">登録</Link>
+            <Link href="/user/register">ユーザー登録</Link>
           </li>
           <li className="btn-primary">
             <Link href="/user/login">ログイン</Link>
