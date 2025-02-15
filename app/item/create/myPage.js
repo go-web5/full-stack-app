@@ -11,7 +11,7 @@ const CreateItem = () => {
   const [image, setImage] = useState("")
   const [description, setDescription] = useState("")
 
-  const loginUserEmail = useAuth()
+  const {loginUserData} = useAuth()
   const router = useRouter()
 
   const handleSubmit = async(e) => {
@@ -30,7 +30,7 @@ const CreateItem = () => {
           price: price,
           image: image,
           description: description,
-          email: loginUserEmail
+          email: loginUserData.email
         })
       })
       const jsonData = await response.json()
@@ -43,7 +43,7 @@ const CreateItem = () => {
     }
   }
 
-  if(loginUserEmail) {
+  if(loginUserData.email) {
     return (
       <main>
         <h1 className="lower-header">アイテム作成</h1>

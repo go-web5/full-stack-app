@@ -12,7 +12,7 @@ const UpdateItem = (context) => {
   const [email, setEmail] = useState("")
   const [loding, setLoding] = useState(false)
 
-  const loginUserEmail = useAuth()
+  const {loginUserData} = useAuth()
   const router = useRouter()
 
   useEffect(() => {
@@ -50,7 +50,7 @@ const UpdateItem = (context) => {
           price: price,
           image: image,
           description: description,
-          email: loginUserEmail
+          email: loginUserData.email
         })
       })
       const jsonData = await response.json()
@@ -64,7 +64,7 @@ const UpdateItem = (context) => {
   }
 
   if(loding) {
-    if(loginUserEmail === email) {
+    if(loginUserData.email === email) {
       return (
         <main>
           <h1 className="lower-header">アイテム編集</h1>
