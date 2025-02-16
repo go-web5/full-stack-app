@@ -55,8 +55,14 @@ const Login = () => {
     <main>
       <h1 className="lower-header">ログイン</h1>
       <form onSubmit={handleSubmit}>
-        <input className="user-input" value={newUser.email} onChange={handleChange} type="text" name="email" placeholder="メールアドレス" required/>
-        <input className="user-input" value={newUser.password} onChange={handleChange} type="text" name="password" placeholder="パスワード" required/>
+        <label className="user-label">
+          <span>メールアドレス</span> <span className="text-red-500">＊</span>
+          <input className="user-input" value={newUser.email} onChange={handleChange} type="text" name="email" placeholder="メールアドレス" required/>
+        </label>
+        <label className="user-label">
+          <span>パスワード</span> <span className="text-red-500">＊</span>
+          <input className="user-input" value={newUser.password} onChange={handleChange} type="text" name="password" placeholder="パスワード" required/>
+        </label>
         <button className="btn-secondary">ログイン</button>
       </form>
     </main>
