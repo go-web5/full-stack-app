@@ -19,7 +19,7 @@ const useAuth = () => {
       if(!token) {
         setLoginUserData({})
         setLoginBoolean(false)
-        router.push("/user/login")
+        // router.push("/user/login")
       }
       
       try{
@@ -33,7 +33,7 @@ const useAuth = () => {
         })
     
       } catch(error) {
-        router.push("/user/login")
+        // router.push("/user/login")
       }
     }
     checkToken()
