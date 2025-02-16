@@ -29,7 +29,9 @@ const ReadAllItems = async() => {
         {allItems.map(item =>
           <article key={item._id} className="card">
             <Link href={`/item/readsingle/${item._id}`} className="">
-              <Image src={item.image} width={750} height={500} alt="item-image" priority />
+              <div className="aspect-[3/2]">
+                <Image src={item.image} className="thumbnail" width={750} height={500} alt="item-image" priority />
+              </div>
               <div className="p-2 md:p-4">
                 <h3 className="text-sm md:text-base font-semibold line-clamp-1">{item.title}</h3>
                 <h2 className="text-lg md:text-2xl font-semibold">¥ {Number(item.price).toLocaleString()}<span className="text-xs md:text-xs font-normal ml-1">(税込)</span></h2>
