@@ -46,9 +46,18 @@ const Register = () => {
     <main>
       <h1 className="lower-header">ユーザー登録</h1>
       <form onSubmit={handleSubmit}>
-        <input className="user-input" value={newUser.name} onChange={handleChange} type="text" name="name" placeholder="名前" required/>
-        <input className="user-input" value={newUser.email} onChange={handleChange} type="text" name="email" placeholder="メールアドレス" required/>
-        <input className="user-input" value={newUser.password} onChange={handleChange} type="text" name="password" placeholder="パスワード" required/>
+        <label className="user-label">
+          <span>名前</span> <span className="text-red-500">＊</span>
+          <input className="user-input" value={newUser.name} onChange={handleChange} type="text" name="name" placeholder="名前" required/>
+        </label>
+        <label className="user-label">
+          <span>メールアドレス</span> <span className="text-red-500">＊</span>
+          <input className="user-input" value={newUser.email} onChange={handleChange} type="text" name="email" placeholder="メールアドレス" required/>
+        </label>
+        <label className="user-label">
+          <span>パスワード</span> <span className="text-red-500">＊</span>
+          <input className="user-input" value={newUser.password} onChange={handleChange} type="text" name="password" placeholder="パスワード" required/>
+        </label>
         <button className="btn-secondary">登録</button>
       </form>
     </main>
