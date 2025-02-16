@@ -42,6 +42,9 @@
   .lower-header {
     @apply text-xl md:text-2xl text-center font-bold pt-6 pb-6;
   }
+  .thumbnail {
+    @apply w-full h-full object-contain;
+  }
 }
 
 /* Img Form */
