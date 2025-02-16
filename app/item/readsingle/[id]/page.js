@@ -22,7 +22,6 @@ const getSingleItem = async(id) => {
 
 const ReadSingleItem = async(context) => {
   const singleItem = await getSingleItem(context.params.id)
-  console.log(singleItem);
 
   return (
     <main className="mt-6 md:mt-8">
