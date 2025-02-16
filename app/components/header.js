@@ -1,18 +1,11 @@
 "use client"
 
-import { useEffect } from "react";
 import Image from "next/image"
 import Link from "next/link"
 import useAuth from "../utils/useAuth"
-import { useAuthContext } from "../context/AuthContext"
 
 const Header = () => {
   const {loginUserData, logout} = useAuth()
-  const [loginBoolean] = useAuthContext()
-
-  useEffect(() => {
-    console.log("loginUserDataが更新されたのでHeaderがレンダリングされました！", loginUserData);
-  }, [loginBoolean]);
 
   return (
     <header>

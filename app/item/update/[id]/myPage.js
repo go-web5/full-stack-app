@@ -32,8 +32,6 @@ const UpdateItem = (context) => {
     getSingleItem(context.params.id)
   }, [context])
 
-  console.log(context);
-
   const handleSubmit = async(e) => {
     e.preventDefault()
     try {

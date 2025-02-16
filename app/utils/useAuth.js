@@ -19,34 +19,28 @@ const useAuth = () => {
       if(!token) {
         setLoginUserData({})
         setLoginBoolean(false)
-        router.push("/user/login")
+        // router.push("/user/login")
       }
       
       try{
         const secretKey = new TextEncoder().encode("next-market-app-book")
         // jwtVerify = ログイン後のリクエスト時にトークンの有効性を検証する
         const decodedJwt = await jwtVerify(token, secretKey)
-        console.log(decodedJwt)
         setLoginUserData({
           name: decodedJwt.payload.name,
           email: decodedJwt.payload.email,
         })
     
       } catch(error) {
-        router.push("/user/login")
+        // router.push("/user/login")
       }
     }
     checkToken()
   },[router, loginBoolean])
 
-  const login = (email, name) => {
-    setLoginUserData({
-      name: name,
-      email: email,
-    }); // 状態を更新
-    console.log(loginUserData);
+  const login = () => {
     setLoginBoolean(true)
-    router.push("/"); // トップページへ遷移
+    router.push("/");
   };
 
   const logout = () => {
