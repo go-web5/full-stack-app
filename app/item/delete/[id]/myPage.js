@@ -35,6 +35,10 @@ const DeleteItem = (context) => {
 
   const handleSubmit = async(e) => {
     e.preventDefault()
+
+    const isConfirmed = window.confirm("本当に削除しますか？");
+    if (!isConfirmed) return; // キャンセルした場合は削除しない
+    
     try {
       // Bearer は、JSON Web Tokenで慣習的に使われていて、マストではない
       const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/delete/${context.params.id}`, {
