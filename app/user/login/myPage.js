@@ -43,7 +43,7 @@ const Login = () => {
       // localStorage.setItem("保管するデータの名前", 保管するデータ)
       localStorage.setItem("token", jsonData.token)
       alert(jsonData.message)
-      login(jsonData.email, jsonData.name); // 状態を更新 & トップページへリダイレクト
+      login(); // ログイン状態を更新 & トップページへリダイレクト
       router.refresh()
 
     } catch(err) {
