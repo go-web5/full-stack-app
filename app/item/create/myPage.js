@@ -57,7 +57,7 @@ const CreateItem = () => {
             <input className="user-input" value={price} onChange={(e) => setPrice(e.target.value)} type="number" name="price" placeholder="価格" inputMode="numeric" required/>
           </label>
           <label className="user-label">
-            <span>画像</span> <span className="text-red-500">＊</span>
+            <span>画像</span> <span className="text-red-500">＊</span> <span className="text-xs sm:text-sm block sm:inline-block">※ファイルを選択して画像Uploadボタンを押してください</span>
             <div className="mt-1 mb-1">
               <ImgInput setImage={setImage}/>
             </div>
